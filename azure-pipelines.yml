@@ -12,7 +12,6 @@ steps:
     dotnet build --configuration $(buildConfiguration)
     dotnet test dotnetcore-tests --configuration $(buildConfiguration) --logger trx
     dotnet publish --configuration $(buildConfiguration) --output $BUILD_ARTIFACTSTAGINGDIRECTORY
-    displayName: 'npm install, build, and test'
 
 - task: PublishTestResults@2
   inputs:
