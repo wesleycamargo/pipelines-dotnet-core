@@ -41,7 +41,7 @@ steps:
 - task: AzureRmWebAppDeployment@4
   inputs:
     connectionType: 'AzureRM' # Options: azureRM, publishProfile
-    azureSubscription: 'a928ee33-003b-4e69-b464-a9e1165f3219' # Required when connectionType == AzureRM
+    azureSubscription: 'Wesley Subscription' # Required when connectionType == AzureRM
     #publishProfilePath: '$(System.DefaultWorkingDirectory)/**/*.pubxml' # Required when connectionType == PublishProfile
     #publishProfilePassword: # Required when connectionType == PublishProfile
     appType: 'webApp' # Required when connectionType == AzureRM# Options: webApp, webAppLinux, webAppContainer, functionApp, functionAppContainer, apiApp, mobileApp
