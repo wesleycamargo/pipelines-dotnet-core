@@ -53,7 +53,7 @@ steps:
     #dockerRepository: # Required when appType == WebAppContainer || WebAppkind == FunctionAppContainer
     #dockerImageTag: # Optional
     #virtualApplication: # Optional
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip' # Required when connectionType == PublishProfile || WebAppKind == WebApp || WebAppKind == ApiApp || WebAppKind == FunctionApp || WebAppKind == MobileApp || WebAppKind == WebAppLinux
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip' # Required when connectionType == PublishProfile || WebAppKind == WebApp || WebAppKind == ApiApp || WebAppKind == FunctionApp || WebAppKind == MobileApp || WebAppKind == WebAppLinux
     #runtimeStack: # Required when appType == WebAppLinux
     #startupCommand: # Optional
     #scriptType: # Optional. Options: , inline Script, file Path
