@@ -18,10 +18,12 @@ steps:
 #     testRunner: VSTest
 #     testResultsFiles: '**/*.trx'
 
+
+
 - task: DotNetCoreCLI@2
   inputs:
     command: test
-    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    arguments: 'dotnetcore-tests --configuration $(buildConfiguration) --logger trx'
 
 - task: DotNetCoreCLI@2
   inputs:
