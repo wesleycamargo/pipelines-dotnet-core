@@ -15,12 +15,6 @@ steps:
     arguments: 'dotnetcore-tests --configuration $(buildConfiguration) --logger trx'
   displayName: 'Executando testes...'
 
-- task: PublishTestResults@2
-  inputs:
-    testRunner: VSTest
-    testResultsFiles: '/home/vsts/work/_temp/**/*.trx'
-  displayName: 'Publicando resultado dos testes...'
-
 - task: DotNetCoreCLI@2
   inputs:
     command: publish
