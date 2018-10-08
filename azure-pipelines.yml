@@ -13,10 +13,16 @@ steps:
 #     dotnet test dotnetcore-tests --configuration $(buildConfiguration) --logger trx
 #     dotnet publish --configuration $(buildConfiguration) --output $BUILD_ARTIFACTSTAGINGDIRECTORY
 
-- task: PublishTestResults@2
+# - task: PublishTestResults@2
+#   inputs:
+#     testRunner: VSTest
+#     testResultsFiles: '**/*.trx'
+
+- task: DotNetCoreCLI@2
   inputs:
-    testRunner: VSTest
-    testResultsFiles: '**/*.trx'
+    command: build
+    publishWebProjects: True
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
 
 - task: DotNetCoreCLI@2
   inputs:
